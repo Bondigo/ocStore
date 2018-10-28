@@ -63,6 +63,7 @@ class Session {
 		} elseif (function_exists('random_bytes')) {
         	return substr(bin2hex(random_bytes(26)), 0, 26);
 		} else (function_exists('openssl_random_pseudo_bytes')) {
+		} elseif (function_exists('openssl_random_pseudo_bytes')) {
 			return substr(bin2hex(openssl_random_pseudo_bytes(26)), 0, 26);
 		}
 	}
